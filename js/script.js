@@ -32,6 +32,27 @@ createApp({
         ],
         currentSlide: 0
     }
-  }
+  },
+
+  methods: {
+   showNext: function() {
+       if (this.currentSlide < this.slides.lengt - 1) {
+           this.currentSlide++;
+       } else {
+           this.currentSlide = 0;
+       }
+   },
+
+   showPrev: function() {
+       if ( this.currentSlide > 0) {
+           this.currentSlide--;
+       } else {
+           this.currentSlide = this.slides.length - 1;
+       }
+   },
+   showSlide(clickedSlide) {
+      this.currentSlide = clickedSlide;
+   } 
+ }
 }).mount("#app");
 
